@@ -6,7 +6,7 @@
 #include <ESP8266WebServer.h>
 #include <PubSubClient.h>
 
-char*               ssid_pfix = (char*)"jongminPortal";
+char*               ssid_pfix = (char*)"jongminKimPortal";
 String              user_config_html = ""
                 "<p><input type='text' name='yourVar placeholder='Your Variable'"; 
 
@@ -118,7 +118,7 @@ void pubStatus() {
     sprintf(buf, "off");
   }
 
-  // client.publish("id/jongminKim/relay/evt", buf);
+  client.publish("id/jongminKim/relay/evt", buf);
 }
 
 void callback(char* topic, byte* payload, unsigned int length){
